@@ -1,18 +1,16 @@
-# fly.toml app configuration file generated for bsb-backend on 2025-04-23T14:47:50+10:00
-#
-# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
-#
+# fly.toml — bsb-backend
+# 只保留和 FastAPI 相关的最小字段
 
-app = 'bsb-backend'
-primary_region = 'syd'
+app            = "bsb-backend"      # Fly 应用名
+primary_region = "syd"              # 你第一次 launch 选的区域
 
 [http_service]
-  internal_port = 8000
-  force_https = true
-  auto_stop_machines = 'stop'
-  auto_start_machines = true
-  min_machines_running = 0
-  processes = ['app']
+internal_port      = 8000           # **改成 8000**
+force_https        = true
+auto_stop_machines = "stop"
+auto_start_machines = true
+min_machines_running = 0
+processes          = ["app"]
 
 [[vm]]
-  size = 'shared-cpu-1x'
+size = "shared-cpu-1x"              # 免费档
